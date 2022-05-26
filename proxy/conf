@@ -5,3 +5,13 @@ server {
         proxy_pass http://web:5000;
     }
 }
+
+server{
+    listen        443 ssl;
+    server_name   54.252.12.92;
+    ssl_certificate /etc/nginx/ssl/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key;
+    location / {
+        proxy_pass   http://web:5000;
+    }
+}

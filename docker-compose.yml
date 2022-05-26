@@ -12,6 +12,9 @@ services:
     restart: always
     ports:
       - 80:80
+      - 443:443
+    volumes: 
+      - /var/opt/docker-ingress/configuration/ssl:/etc/nginx/ssl
     networks:
       - flask_network
 
