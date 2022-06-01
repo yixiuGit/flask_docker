@@ -17,6 +17,22 @@ services:
       - /var/opt/docker-ingress/configuration/ssl:/etc/nginx/ssl
     networks:
       - flask_network
-
+  db: 
+    image: postgres:13
+    restart: always
+    ports: 
+      - 5432:5432
+    networks:
+      - flask_network
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=site
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+     
 networks:
   flask_network:
+
+volumes: 
+  postgres_data:
