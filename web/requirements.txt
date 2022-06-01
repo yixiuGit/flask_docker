@@ -3,3 +3,4 @@ Flask-SQLAlchemy
 Flask-WTF
 email-validator   #https://stackoverflow.com/questions/61356834/wtforms-install-email-validator-for-email-validation-support
 gunicorn
+psycopg2
